@@ -1,0 +1,6 @@
+# Editor Configuration
+.vscode/
+.idea/
+
+# Mac Specific
+.DS_Store
