@@ -59,3 +59,7 @@ JSONL.stringify = (lst) => {
     })
     .join("\n");
 };
+
+if (typeof module !== 'undefined') {
+  module.exports = JSONL;
+}
