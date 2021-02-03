@@ -6,10 +6,10 @@
 var JSONL = {};
 
 /**
- * @type {!string}
+ * @type {string}
  * @const
  */
-JSONL.name = "JSONL";
+JSONL.name = "jsonlines";
 
 /**
  * Parse JSONL

@@ -1,0 +1,21 @@
+{
+  "name": "@saiansh2525/jsonlines",
+  "version": "1.0.0",
+  "description": "Simple lightweight library built for parsing and stringifying JSONL",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yash-Singh1/JSONL.js.git"
+  },
+  "keywords": [
+    "jsonlines",
+    "parsing",
+    "stringifying"
+  ],
+  "author": "Yash Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yash-Singh1/JSONL.js/issues"
+  },
+  "homepage": "https://github.com/Yash-Singh1/JSONL.js#readme"
+}
