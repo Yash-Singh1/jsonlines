@@ -27,11 +27,9 @@ JSONL.parse = (jsonl) => {
     } catch (e) {
       error = true;
       if (
-        e
-          .toString()
-          .includes("SyntaxError: Unexpected token { in JSON at position ")
+      	/^SyntaxError: Unexpected (string|token [{n\[]) in JSON at position \d+/.test(e.toString())
       ) {
-        position = parseInt(e.toString().substring(52));
+        position = parseInt(/JSON.*?(\d+)/.exec(e.toString())[1]);
         input = [input.slice(0, position), ",", input.slice(position)].join("");
       } else {
         throw "Invalid JSONL";
