@@ -14,7 +14,7 @@ JSONL.name = "jsonlines";
 /**
  * Parse JSONL
  * @param {string} jsonl The string that has to be parsed
- * @returns {object} An object that contains the parsed string
+ * @returns {*[]} The output from parsing the JSONL
  * @function
  */
 JSONL.parse = (jsonl) => {
@@ -46,7 +46,7 @@ JSONL.parse = (jsonl) => {
 
 /**
  * Stringify any list to JSONL
- * @param {Object[]} lst
+ * @param {*[]} lst The list to stringify
  * @returns {string} The string form of the list in JSONL
  * @function
  */
