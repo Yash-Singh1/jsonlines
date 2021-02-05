@@ -4,6 +4,8 @@
 way to write a list of JSON objects. This is a simple lightweight library built for
 parsing and stringifying `JSONL`.
 
+:warning: This package has very minor support on browsers :warning:
+
 ## Installation
 
 Install from `npm`:
