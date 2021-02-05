@@ -6,43 +6,23 @@ parsing and stringifying `JSONL`.
 
 ## Installation
 
-The following are ways to install `jsonlines`:
+Install from `npm`:
 
-### Locally
-
-Run:
-
-```bash
-curl -o- https://raw.githubusercontent.com/Yash-Singh1/jsonlines/master/index.js > JSONL.js
+```sh
+npm install --save @saiansh2525/jsonlines
 ```
 
-Now you can import the library in:
-
-#### NodeJS
-
-```js
-require("./JSONL.js");
-```
-
-#### HTML
+### HTML
 
 ```html
-<script src="JSONL.js"></script>
+<script src="node_modules/@saiansh2525/jsonlines/index.js"></script>
 ```
 
-### Remotely
+### NodeJS
 
-To import the library live, add the following into your HTML:
-
-#### HTML
-
-```html
-<script src="https://raw.githubusercontent.com/Yash-Singh1/jsonlines/master/index.js"></script>
+```javascript
+const JSONL = require('@saiansh2525/jsonlines');
 ```
-
-#### NodeJS
-
-You can send a request and then load it into your script.
 
 ## Docs
 
