@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Yash-Singh1/JSONL.js.git"
+    "url": "git+https://github.com/Yash-Singh1/jsonlines.git"
   },
   "keywords": [
     "jsonlines",
@@ -15,7 +15,7 @@
   "author": "Yash Singh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Yash-Singh1/JSONL.js/issues"
+    "url": "https://github.com/Yash-Singh1/jsonlines/issues"
   },
-  "homepage": "https://github.com/Yash-Singh1/JSONL.js#readme"
+  "homepage": "https://github.com/Yash-Singh1/jsonlines#readme"
 }
