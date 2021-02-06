@@ -9,7 +9,7 @@ var JSONL = {};
  * @type {string}
  * @const
  */
-JSONL.name = "jsonlines";
+JSONL.name = 'jsonlines';
 
 /**
  * Parse JSONL
@@ -18,21 +18,31 @@ JSONL.name = "jsonlines";
  * @function
  */
 JSONL.parse = (jsonl) => {
-  let input = "[" + jsonl + "]";
+  const chromiumErrorParseReg = /^SyntaxError: Unexpected (?:string|token [{n\[]) in JSON at position (\d+)/;
+  const mozillaErrorParseReg = /SyntaxError: JSON.parse: expected ',' or ']' after array element at line (\d+) column (\d+) of the JSON data/;
+  let input = '[' + jsonl + ']';
   let error = false;
-  let position;
   while (true) {
     try {
       JSON.parse(input);
     } catch (e) {
+      eString = e.toString();
       error = true;
-      if (
-      	/^SyntaxError: Unexpected (string|token [{n\[]) in JSON at position \d+/.test(e.toString())
-      ) {
-        position = parseInt(/JSON.*?(\d+)/.exec(e.toString())[1]);
-        input = [input.slice(0, position), ",", input.slice(position)].join("");
+      if (chromiumErrorParseReg.test(eString)) {
+        position = parseInt(chromiumErrorParseReg.exec(eString)[1]);
+        input = [input.slice(0, position), ',', input.slice(position)].join('');
+      } else if (mozillaErrorParseReg.test(eString)) {
+        match = mozillaErrorParseReg.exec(eString);
+        position =
+          input.split('\n', parseInt(match[1]) - 1).join('').length +
+          parseInt(match[2]);
+        input = [
+          input.slice(0, position - 1),
+          ',',
+          input.slice(position - 1),
+        ].join('');
       } else {
-        throw "Invalid JSONL";
+        throw new Error('Invalid JSONL');
       }
     }
     if (error == true) {
@@ -55,7 +65,7 @@ JSONL.stringify = (lst, ...jsonArgs) => {
     .map((key) => {
       return JSON.stringify(key, ...jsonArgs);
     })
-    .join("\n");
+    .join('\n');
 };
 
 if (typeof module !== 'undefined') {
