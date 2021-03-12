@@ -33,14 +33,8 @@ JSONL.parse = (jsonl) => {
         input = [input.slice(0, position), ',', input.slice(position)].join('');
       } else if (mozillaErrorParseReg.test(eString)) {
         match = mozillaErrorParseReg.exec(eString);
-        position =
-          input.split('\n', parseInt(match[1]) - 1).join('').length +
-          parseInt(match[2]);
-        input = [
-          input.slice(0, position - 1),
-          ',',
-          input.slice(position - 1),
-        ].join('');
+        position = input.split('\n', parseInt(match[1]) - 1).join('').length + parseInt(match[2]);
+        input = [input.slice(0, position - 1), ',', input.slice(position - 1)].join('');
       } else {
         throw new Error('Invalid JSONL');
       }
