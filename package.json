@@ -1,6 +1,6 @@
 {
   "name": "@saiansh2525/jsonlines",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Simple lightweight library built for parsing and stringifying JSONL",
   "main": "index.js",
   "repository": {
