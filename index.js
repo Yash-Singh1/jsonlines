@@ -37,7 +37,7 @@ JSONL.parse = (jsonl) => {
         position = input.split('\n', parseInt(match[1]) - 1).join('').length + parseInt(match[2]);
         input = [input.slice(0, position - 1), ',', input.slice(position - 1)].join('');
       } else if (invalidNumberErrorParseReg.test(eString)) {
-        position = parseInt(invalidNumberErrorParseReg.exec(eString)[1])
+        position = parseInt(invalidNumberErrorParseReg.exec(eString)[1]);
         input = [input.slice(0, position), ',', input.slice(position)].join('');
       } else {
         throw new Error('Invalid JSONL');
