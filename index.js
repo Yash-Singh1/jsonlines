@@ -58,10 +58,10 @@ JSONL.parse = (jsonl) => {
  * @returns {string} The string form of the list in JSONL
  * @function
  */
-JSONL.stringify = (lst, ...jsonArgs) => {
+JSONL.stringify = (lst, replacer, space) => {
   return lst
     .map((key) => {
-      return JSON.stringify(key, ...jsonArgs);
+      return JSON.stringify(key, replacer, space);
     })
     .join('\n');
 };
