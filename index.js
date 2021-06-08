@@ -19,8 +19,8 @@ JSONL.name = 'jsonlines';
  */
 JSONL.parse = (jsonl) => {
   const chromiumErrorParseReg = /^SyntaxError: Unexpected (?:string|token [{n\[]) in JSON at position (\d+)/;
-  const mozillaErrorParseReg = /SyntaxError: JSON.parse: expected ',' or ']' after array element at line (\d+) column (\d+) of the JSON data/;
-  const invalidNumberErrorParseReg = /SyntaxError: Unexpected number in JSON at position (\d+)/;
+  const mozillaErrorParseReg = /^SyntaxError: JSON.parse: expected ',' or ']' after array element at line (\d+) column (\d+) of the JSON data/;
+  const invalidNumberErrorParseReg = /^SyntaxError: Unexpected number in JSON at position (\d+)/;
   let input = '[' + jsonl + ']';
   let error = false;
   while (true) {
