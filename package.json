@@ -17,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/Yash-Singh1/jsonlines/issues"
   },
-  "homepage": "https://github.com/Yash-Singh1/jsonlines#readme"
+  "homepage": "https://github.com/Yash-Singh1/jsonlines#readme",
+  "scripts": {
+    "test": "nyc --reporter=lcov --reporter=text-summary jasmine"
+  },
+  "devDependencies": {
+    "jasmine": "^3.7.0",
+    "nyc": "^15.1.0"
+  }
 }
