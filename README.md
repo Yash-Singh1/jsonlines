@@ -11,7 +11,7 @@ parsing and stringifying `JSONL`.
 Install from `npm`:
 
 ```sh
-npm install --save @saiansh2525/jsonlines
+npm install @saiansh2525/jsonlines
 ```
 
 ### HTML
