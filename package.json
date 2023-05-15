@@ -22,7 +22,7 @@
     "test": "nyc --reporter=lcov --reporter=text-summary jasmine"
   },
   "devDependencies": {
-    "jasmine": "^4.0.0",
+    "jasmine": "^5.0.0",
     "nyc": "^15.1.0"
   }
 }
